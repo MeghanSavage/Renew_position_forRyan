@@ -9,11 +9,14 @@
 #runFASTQC to check metrics on each
 
 #ALIGNMENT 
-If your proposed solution involves sequence alignment, the “aligner” function from dorado is commonly used to align data found in the unaligned BAM files (dorado uses minimap2 under the hood for alignment). 
-#Alternatively, you might find it useful to convert the BAM files to FASTQ format and then align with minimap2.
-#convert BAM to FASTQ 
+#“aligner” function from dorado 
 
-#align with minimap2
+dorado aligner <index> <reads>  > aligned.bam
+
+dorado summary <bam> > summary.tsv
+
+dorado basecaller <model> <reads> --reference <index> > calls.bam
+
 
 #Align files to each reference genome
 ##First align to D5405.fa 
@@ -28,5 +31,3 @@ oryza_sativa.fa
 
 #Results before and after protocol tweak. Comparison between them. 
 #Expected results - should NOT see aligned reads to other reference genomes.
-
-#variant calling step
