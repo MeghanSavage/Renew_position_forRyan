@@ -13,14 +13,14 @@ unaligned_after = path to #bc_zymo_1b_26-124-0070.subsampled_100000.bam
 
 #ALIGNMENT with DORADO
 #using aligner function from dorado 
+#dorado aligner <index> <reads>  > aligned.bam
 
 ref_d5405= pathtoreffile_d4505
 
 #ALIGN WITH DORADO_d5405
-dorado aligner d5405 <reads>  > aligned.bam
+dorado aligner d5405 unaligned_before  > aligned_before.bam
+dorado aligner d5405 unaligned_after  > aligned_after.bam
 
-
-dorado aligner <index> <reads>  > aligned.bam
 
 dorado summary <bam> > summary.tsv
 
