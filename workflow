@@ -6,10 +6,19 @@
 #bc_zymo_3a_26-124-0051.subsampled_100000.bam - downsampled sequencing data from a Zymo D5405 sample before Felix’s protocol tweak
 #bc_zymo_1b_26-124-0070.subsampled_100000.bam - downsampled sequencing data from a Zymo D5405 sample after Felix’s protocol tweak
 
-#runFASTQC to check metrics on each
+unaligned_before = path to #bc_zymo_3a_26-124-0051.subsampled_100000.bam 
+unaligned_after = path to #bc_zymo_1b_26-124-0070.subsampled_100000.bam
 
-#ALIGNMENT 
-#“aligner” function from dorado 
+#runFASTQC to check metrics
+
+#ALIGNMENT with DORADO
+#using aligner function from dorado 
+
+ref_d5405= pathtoreffile_d4505
+
+#ALIGN WITH DORADO_d5405
+dorado aligner d5405 <reads>  > aligned.bam
+
 
 dorado aligner <index> <reads>  > aligned.bam
 
@@ -23,10 +32,13 @@ dorado basecaller <model> <reads> --reference <index> > calls.bam
 
 #align to other 3 reference genomes
 #human  alignment
+dorado aligner <index> <reads>  > aligned.bam
 homo_sapiens.fa 
 #lamdba
+dorado aligner <index> <reads>  > aligned.bam
 lambda.fa
 #oryza
+dorado aligner <index> <reads>  > aligned.bam
 oryza_sativa.fa   
 
 #Results before and after protocol tweak. Comparison between them. 
