@@ -21,11 +21,9 @@ ref_d5405= pathtoreffile_d4505
 dorado aligner d5405 unaligned_before  > aligned_before.bam
 dorado aligner d5405 unaligned_after  > aligned_after.bam
 
-
 dorado summary <bam> > summary.tsv
 
 dorado basecaller <model> <reads> --reference <index> > calls.bam
-
 
 #Align files to each reference genome
 ##First align to D5405.fa 
