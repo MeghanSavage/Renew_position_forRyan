@@ -6,13 +6,16 @@
 #bc_zymo_3a_26-124-0051.subsampled_100000.bam - downsampled sequencing data from a Zymo D5405 sample before Felix’s protocol tweak
 #bc_zymo_1b_26-124-0070.subsampled_100000.bam - downsampled sequencing data from a Zymo D5405 sample after Felix’s protocol tweak
 
-unaligned_before = path to #bc_zymo_3a_26-124-0051.subsampled_100000.bam 
-unaligned_after = path to #bc_zymo_1b_26-124-0070.subsampled_100000.bam
+unaligned_before = /Users/meghansavage/Documents/Renew/bc_zymo_3a_26-124-0051.subsampled_100000.bam 
+unaligned_after = /Users/meghansavage/Documents/Renew/bc_zymo_1b_26-124-0070.subsampled_100000.bam
 
 #runFASTQC to check metrics
 
 #ALIGNMENT with DORADO
 #using aligner function from dorado 
+cd /Users/meghansavage/Documents/dorado-2.0.0-linux-x64
+
+#/Documents/dorado-x.y.z-linux-x64/bin/dorado basecaller hac pod5s/ > calls.bam
 #dorado aligner <index> <reads>  > aligned.bam
 
 ref_d5405= pathtoreffile_d4505
