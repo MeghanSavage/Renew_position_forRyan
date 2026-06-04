@@ -1,7 +1,6 @@
 ##WORKLOW FOR RENEW BIOINFORMATICS POSITION
 
 ##Start with unaligned bams for samples
-
 #BAM FILES_unaligned
 #bc_zymo_3a_26-124-0051.subsampled_100000.bam - downsampled sequencing data from a Zymo D5405 sample before Felix’s protocol tweak
 #bc_zymo_1b_26-124-0070.subsampled_100000.bam - downsampled sequencing data from a Zymo D5405 sample after Felix’s protocol tweak
@@ -18,9 +17,10 @@ cd /Users/meghansavage/Documents/dorado-2.0.0-linux-x64
 #/Documents/dorado-x.y.z-linux-x64/bin/dorado basecaller hac pod5s/ > calls.bam
 #dorado aligner <index> <reads>  > aligned.bam
 
-ref_d5405= pathtoreffile_d4505
+mkdir = Renew/Ref_files
+ref_d5405= ./Renew/Ref_files/COPY ACTUAL FILE d4505
 
-#ALIGN WITH DORADO_d5405
+#ALIGN TO d5405 reference genome
 dorado aligner d5405 unaligned_before  > aligned_before.bam
 dorado aligner d5405 unaligned_after > aligned_after.bam
 
